@@ -10,11 +10,18 @@ public class JumpAbility : BaseAbility
     [SerializeField] private float mininumAirTime;
     private float startmininumAirTime;
 
+    private string jumpAnimParameterName = "Jump";
+    private string ySpeedAnimParameterName = "ySpeed";
+    private int jumpParameterID;
+    private int ySpeedParameterID;
+
 
     protected override void Initialization()
     {
         base.Initialization();
         startmininumAirTime = mininumAirTime;
+        jumpParameterID = Animator.StringToHash(jumpAnimParameterName);
+        ySpeedParameterID = Animator.StringToHash(ySpeedAnimParameterName);
     }
     private void OnEnable()
     {
@@ -58,6 +65,11 @@ public class JumpAbility : BaseAbility
     private void StopJump(InputAction.CallbackContext value)
     {
         Debug.Log("STOPJUMP");
+    }
+    public override void UpdateAnimator()
+    {
+        linkedAnimator.SetBool(jumpParameterID, linkedStateMachine.currentState == PlayerStates.State.Jump);
+        linkedAnimator.SetFloat(ySpeedParameterID, linkedPhysics.rb.linearVelocityY);
     }
 
 }
