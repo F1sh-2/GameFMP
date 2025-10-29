@@ -45,6 +45,8 @@ public class PatrolingStateMachine : EnemySimpleStateMachine
     {
         anim.Play(MoveAnimationName);
         moveStateTimer = Random.Range(minMoveTime, maxMoveTime);
+        //ForceFlip();
+        //speed *= -1;
     }
     public override void UpdateMove()
     {
@@ -56,7 +58,7 @@ public class PatrolingStateMachine : EnemySimpleStateMachine
 
         if(patrolPhysics.wallDetected || patrolPhysics.groundDetected == false)
         {
-            if (turnCooldown < 0)
+            if (turnCooldown > 0)
                 return;
             ForceFlip();
             speed *= -1;

@@ -14,11 +14,11 @@ TagManager:
   - Player
   - Ground
   - Enemy
-  - 
-  - 
-  - 
-  - 
-  - 
+  - DamagePlayer
+  - PlayerStats
+  - Minimap
+  - WithGround
+  - CameraEdge
   - 
   - 
   - 
