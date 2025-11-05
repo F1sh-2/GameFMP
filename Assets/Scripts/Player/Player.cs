@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -48,12 +49,23 @@ public class Player : MonoBehaviour
         if(facingRight== true && gatherInput.horizontalInput < 0 )
         {
             transform.Rotate(0, 180, 0);
+            //var currentScale = transform.localScale;
+            //currentScale.x = Mathf.Abs(currentScale.x) *-1.0f;
+            //transform.localScale = currentScale;
             facingRight = !facingRight;
         }
         else if (facingRight== false && gatherInput.horizontalInput > 0 )
         {
+            //var currentScale = transform.localScale;
+            //currentScale.x = Mathf.Abs(currentScale.x);
+            //transform.localScale = currentScale;
             transform.Rotate(0,180,0);
             facingRight= !facingRight;
         }
+    }
+    public void ForceFlip()
+    {
+        transform.Rotate(0, 180, 0);
+        facingRight = !facingRight;
     }
 }
