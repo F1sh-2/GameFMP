@@ -55,13 +55,7 @@ public class WallJumpAbility : BaseAbility
     {
         wallJumpTimer -= Time.deltaTime;
         wallJumpMininumTime -= Time.deltaTime;
-        if (wallJumpMininumTime <=0 && linkedPhysics.wallDetected)
-        {
-            linkedStateMachine.ChangeState(PlayerStates.State.WallSlide);
-            wallJumpTimer = -1;
-            return;
-        }
-        if(wallJumpTimer <= 0)
+        if (wallJumpTimer <= 0)
         {
             if (linkedPhysics.grounded)
             {
@@ -70,8 +64,16 @@ public class WallJumpAbility : BaseAbility
             else
             {
                 linkedStateMachine.ChangeState(PlayerStates.State.Jump);
+                return;
             }
         }
+        if (wallJumpMininumTime <=0 && linkedPhysics.wallDetected)
+        {
+            linkedStateMachine.ChangeState(PlayerStates.State.WallSlide);
+            wallJumpTimer = -1;
+           
+        }
+       
     }
     private bool EvaluateWallJumpConditions()
     {

@@ -11149,6 +11149,7 @@ GameObject:
   - component: {fileID: 268253536}
   - component: {fileID: 268253534}
   - component: {fileID: 268253535}
+  - component: {fileID: 268253537}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -11480,6 +11481,23 @@ MonoBehaviour:
   thisAbilityState: 5
   isPermitted: 1
   maxSlideSpeed: 0.8
+--- !u!114 &268253537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268253521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35133e838fc346468aa5d2ba1786b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisAbilityState: 0
+  isPermitted: 1
+  dashActionRef: {fileID: 0}
+  dashForce: 0
+  maxDashDuration: 0
 --- !u!1 &297676959
 GameObject:
   m_ObjectHideFlags: 0

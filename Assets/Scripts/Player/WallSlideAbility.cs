@@ -27,11 +27,15 @@ public class WallSlideAbility : BaseAbility
         if (player.facingRight && linkedInput.horizontalInput < 0)
         {
             linkedStateMachine.ChangeState(PlayerStates.State.Jump);
+            linkedPhysics.wallDetected = false;
+            linkedAnimator.SetBool("WallSlide", false);
             return;
         }
         if (player.facingRight && linkedInput.horizontalInput > 0)
         {
             linkedStateMachine.ChangeState(PlayerStates.State.Jump);
+            linkedPhysics.wallDetected = false;
+            linkedAnimator.SetBool("WallSlide", false);
             return;
         }
         if(!linkedPhysics.wallDetected)
