@@ -10542,7 +10542,7 @@ CompositeCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
@@ -11146,6 +11146,7 @@ GameObject:
   - component: {fileID: 268253530}
   - component: {fileID: 268253532}
   - component: {fileID: 268253533}
+  - component: {fileID: 268253536}
   - component: {fileID: 268253534}
   - component: {fileID: 268253535}
   m_Layer: 6
@@ -11298,7 +11299,7 @@ Transform:
   m_GameObject: {fileID: 268253521}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.76, y: 2, z: 0}
+  m_LocalPosition: {x: 2.68, y: 2.04, z: 0}
   m_LocalScale: {x: 0.984, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11425,7 +11426,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   grounded: 0
-  wallRayDistance: 0.05
+  wallRayDistance: 0.1
   wallCheckpointUpper: {fileID: 1758117410}
   wallCheckpointLower: {fileID: 1172366543}
   wallDetected: 0
@@ -11464,6 +11465,21 @@ MonoBehaviour:
   wallJumpActionRef: {fileID: 8356014415723050403, guid: cd7f92a52eff9a44aa4ae37e22733093, type: 3}
   wallJumpForce: {x: 8, y: 10}
   wallJumpMaxTime: 0.4
+--- !u!114 &268253536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268253521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7a1e97ceb53614c9c17dc211e416e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisAbilityState: 5
+  isPermitted: 1
+  maxSlideSpeed: 0.8
 --- !u!1 &297676959
 GameObject:
   m_ObjectHideFlags: 0
@@ -11489,7 +11505,7 @@ Transform:
   m_GameObject: {fileID: 297676959}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.392, y: -0.982, z: 0}
+  m_LocalPosition: {x: -0.418, y: -0.928, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11520,7 +11536,7 @@ Transform:
   m_GameObject: {fileID: 788003209}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.13, y: -0.969, z: 0}
+  m_LocalPosition: {x: 0.13, y: -0.928, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11785,7 +11801,7 @@ Transform:
   m_GameObject: {fileID: 993769192}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.76, y: 6.1687994, z: -10}
+  m_LocalPosition: {x: 2.68, y: 6.2087994, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11848,7 +11864,7 @@ Transform:
   m_GameObject: {fileID: 1172366542}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.333, y: -0.289, z: 0}
+  m_LocalPosition: {x: 0.247, y: -0.289, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11875,7 +11891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1179323072
 Animator:
   serializedVersion: 7
@@ -12035,7 +12051,7 @@ Transform:
   m_GameObject: {fileID: 1179323071}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.873, y: 2.024, z: 0}
+  m_LocalPosition: {x: -8.53, y: 1.93342, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12113,7 +12129,7 @@ Transform:
   m_GameObject: {fileID: 1758117409}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.339, y: 0.708, z: 0}
+  m_LocalPosition: {x: 0.247, y: 0.708, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12144,7 +12160,7 @@ Transform:
   m_GameObject: {fileID: 1830032174}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.843, y: -1.3, z: 0}
+  m_LocalPosition: {x: 0.843, y: -1.027, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17023,7 +17039,7 @@ CompositeCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 1
+  m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:

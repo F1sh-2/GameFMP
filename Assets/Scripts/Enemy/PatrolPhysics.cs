@@ -17,6 +17,7 @@ public class PatrolPhysics : MonoBehaviour
     {
         groundDetected = Physics2D.OverlapCircle(GroundCheckPoint.position, checkRadius, whatToDetect);
         wallDetected = Physics2D.OverlapCircle(wallCheckPoint.position, checkRadius, whatToDetect);
+
     }
 
     private void OnDrawGizmos()
