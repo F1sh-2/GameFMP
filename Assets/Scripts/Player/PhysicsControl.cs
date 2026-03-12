@@ -26,12 +26,7 @@ public class PhysicsControl : MonoBehaviour
     private RaycastHit2D hitInfoWallLower;
 
 
-    private float gravityValue;
-    void Start()
-    {
-        gravityValue = rb.gravityScale;
-    }
-
+    public float gravityValue = 15;
     private bool CheckWall()
     {
         hitInfoWallUpper = Physics2D.Raycast(wallCheckpointUpper.position, transform.right, wallRayDistance, whattoDetect);

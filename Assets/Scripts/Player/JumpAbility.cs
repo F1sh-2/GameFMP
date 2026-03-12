@@ -5,16 +5,22 @@ public class JumpAbility : BaseAbility
 {
     public InputActionReference jumpActionRef;
 
-    [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpHeight;
     [SerializeField] private float airSpeed;
     [SerializeField] private float mininumAirTime;
     private float startmininumAirTime;
 
+    private float jumpForce = 42;
     private string jumpAnimParameterName = "Jump";
     private string ySpeedAnimParameterName = "ySpeed";
     private int jumpParameterID;
     private int ySpeedParameterID;
 
+    private void CalculateJumpForce()
+    {
+        float gravity = Physics2D.gravity.y * linkedPhysics.gravityValue;
+        jumpForce = Mathf.Sqrt(-2.0f * gravity * jumpHeight);
+    }
 
     protected override void Initialization()
     {
@@ -22,6 +28,7 @@ public class JumpAbility : BaseAbility
         startmininumAirTime = mininumAirTime;
         jumpParameterID = Animator.StringToHash(jumpAnimParameterName);
         ySpeedParameterID = Animator.StringToHash(ySpeedAnimParameterName);
+        CalculateJumpForce();
     }
     private void OnEnable()
     {
@@ -59,6 +66,11 @@ public class JumpAbility : BaseAbility
 
     private void Jump()
     {
+        // This allows us to change the jump height or gravity scale in
+        // the editor while the game is running
+#if UNITY_EDITOR
+        CalculateJumpForce();
+#endif
         linkedPhysics.rb.linearVelocity = new Vector2(airSpeed * linkedInput.horizontalInput, jumpForce);
         mininumAirTime = startmininumAirTime;
     }
