@@ -3,14 +3,15 @@ using UnityEngine.UI;
 
 public class PlayerDamage : MonoBehaviour
 {
-    public Image[] hearts;
-    private int lives = 2;
+    public RectTransform hearts;
+    private int lives;
 
     private AudioSource source;
-
+    
     private void Start()
     {
         source = GetComponent<AudioSource>();
+        lives = hearts.childCount - 1;
     }
 
 
@@ -19,7 +20,7 @@ public class PlayerDamage : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("hurt");
-            hearts[lives].enabled = false;
+            hearts.GetChild(lives).gameObject.SetActive(false);
             source.Play();
             lives -= 1;
         }
@@ -30,7 +31,7 @@ public class PlayerDamage : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("hurt");
-            hearts[lives].enabled = false;
+            hearts.GetChild(lives).gameObject.SetActive(false);
             source.Play();
             lives -= 1;
         }
