@@ -6,17 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 15cdd9002bf68ac4cb4e4fd0e81ea0fc
+  - enabled: 1
     path: Assets/Scenes/LittleKnight.unity
     guid: 40d262e67f5009648868e42960356b3a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StartScreen.unity
     guid: 21343e646dd6caf47b202d90bf6460f6
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 15cdd9002bf68ac4cb4e4fd0e81ea0fc
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 492b5ce73a4767b43a670eb2a4e02805, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: cd7f92a52eff9a44aa4ae37e22733093, type: 3}
